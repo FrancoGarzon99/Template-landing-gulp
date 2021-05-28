@@ -1,0 +1,31 @@
+{
+  "name": "siniestro",
+  "title": "Siniestro",
+  "description": "",
+  "version": "2.1.0",
+  "author": {
+    "name": "Siniestro",
+    "email": "phavlo12@gmail.com",
+    "url": "http://www.siniestro.net"
+  },
+  "dependencies": {
+    "node-promise": "latest"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "del": "^2.2.0",
+    "gulp": "^4.0.2",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-header": "^1.7.1",
+    "gulp-if": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-rename": "^1.2.2",
+    "gulp-sequence": "^0.4.5",
+    "gulp-twig": "^0.5.0",
+    "gulp-uglify": "^1.5.2",
+    "gulp-useref": "^3.0.5",
+    "gulp-watch": "^4.3.5",
+    "gulp-zip": "^3.2.0"
+  },
+  "keywords": []
+}

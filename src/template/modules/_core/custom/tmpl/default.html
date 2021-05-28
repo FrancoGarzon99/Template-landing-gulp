@@ -1,0 +1,10 @@
+{% if content %}
+<div class="uk-panel {{ class }}">
+    {% if show_title == true and title %}
+    <h3 class="uk-panel-title">
+        {{ title }}
+    </h3>
+    {% endif %}
+    {{ content }}
+</div>
+{% endif %}

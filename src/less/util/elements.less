@@ -1,0 +1,264 @@
+
+#uk-library {
+
+	.vertical-gradient(@start: #EEE; @stop: #FFF) {
+		background: @start; /* Old browsers */
+		background: -moz-linear-gradient(top,  @start 0%, @stop 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,@stop)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, @start 0%, @stop 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, @start 0%, @stop 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, @start 0%, @stop 100%); /* IE10+ */
+		background: linear-gradient(to bottom, @start 0%, @stop 100%); /* W3C */
+		filter: 	e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", @stop, @start));/* IE6-9 */
+	}
+	
+	.horizontal-gradient(@start: #EEE; @stop: #FFF) {
+		background: @start; /* Old browsers */
+		background: -moz-linear-gradient(left,  @start 0%, @stop 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,@start), color-stop(100%,@stop)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left, @start 0%, @stop 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left, @start 0%, @stop 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left, @start 0%, @stop 100%); /* IE10+ */
+		background: linear-gradient(to right, @start 0%, @stop 100%); /* W3C */
+		filter: 	e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", @stop, @start));/* IE6-9 */
+	}
+	
+	.border-dashed(@start: #fff; @stop: rgba(255, 255, 255, 0); @width: 5px; @height: 1px) {
+		background: -moz-linear-gradient(left top,  @start 50%, @stop 50%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,@start), color-stop(50%,@stop)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left top, @start 50%, @stop 50%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left top, @start 50%, @stop 50%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left top, @start 50%, @stop 50%); /* IE10+ */
+		background: linear-gradient(to left, @start 50%, @stop 50%); /* W3C */
+		filter: 	e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", @stop, @start));/* IE6-9 */
+		
+		height: @height;
+		background-size: @width 100%;
+	}
+	
+	.box-shadow(@string) {
+		-webkit-box-shadow: @string;
+		-moz-box-shadow:    @string;
+		box-shadow:         @string;
+	}
+	
+	.drop-shadow(@x: 0; @y: 1px; @blur: 2px; @spread: 0; @color: rgba(0, 0, 0, 0.25)) {
+		.box-shadow (@x @y @blur @spread @color);
+	}
+	
+	.inner-shadow(@x: 0; @y: 1px; @blur: 2px; @spread: 0; @color: rgba(0, 0, 0, 0.25)) {
+		.box-shadow (inset @x @y @blur @spread @color);
+	}
+	
+	.inner-top-bottom-shadow(@x: 0; @y: 22px; @blur: 22px; @spread: -22px; @color: rgba(0, 0, 0, 0.8)) {
+		@temp: inset @x @y @blur @spread @color, inset @x -@y @blur @spread @color;
+		.box-shadow (~"@{temp}");
+	}
+	
+	.box-sizing (@type: border-box) {
+		-webkit-box-sizing: @type;
+		-moz-box-sizing:    @type;
+		box-sizing:         @type;
+	}
+	
+	.border-radiuses(@topright: 0; @bottomright: 0; @bottomleft: 0; @topleft: 0) {
+		-webkit-border-top-right-radius:    @topright;
+		-webkit-border-bottom-right-radius: @bottomright;
+		-webkit-border-bottom-left-radius:  @bottomleft;
+		-webkit-border-top-left-radius:     @topleft;
+	
+		-moz-border-radius-topright:        @topright;
+		-moz-border-radius-bottomright:     @bottomright;
+		-moz-border-radius-bottomleft:      @bottomleft;
+		-moz-border-radius-topleft:         @topleft;
+	
+		border-top-right-radius:            @topright;
+		border-bottom-right-radius:         @bottomright;
+		border-bottom-left-radius:          @bottomleft;
+		border-top-left-radius:             @topleft;
+	
+		-moz-background-clip:    			padding; 
+		-webkit-background-clip: 			padding-box; 
+		background-clip:         			padding-box; 
+	}
+	
+	.border-radius(@radius: 5px) {
+		.border-radiuses(@radius, @radius, @radius, @radius);
+	}
+
+	.opacity(@opacity: 0.5) {
+		-moz-opacity: 		@opacity;
+		-khtml-opacity: 	@opacity;
+		-webkit-opacity: 	@opacity;
+		-moz-opacity: 		@opacity;
+		opacity: 			@opacity;
+		
+		@opperc: 			@opacity * 100;
+		-ms-filter: 		~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+		filter: 			~"alpha(opacity=@{opperc})";
+	}
+	
+	.animation(@name; @duration: 300ms; @delay: 0; @ease: ease) {
+		-webkit-animation: @name @duration @delay @ease;
+		-moz-animation:    @name @duration @delay @ease;
+		-ms-animation:     @name @duration @delay @ease;
+	}
+	
+	.transition(@transition) {
+			
+		-webkit-transition: ~"@{transition}";  
+		-moz-transition:    ~"@{transition}";
+		-ms-transition:     ~"@{transition}"; 
+		-o-transition:      ~"@{transition}";  
+		transition: 		~"@{transition}";
+	}
+	
+	.transform(@string){
+		-webkit-transform: 	@string;
+		-moz-transform: 	@string;
+		-ms-transform: 		@string;
+		-o-transform: 		@string;
+		transform: 			@string;
+	}
+	
+	.scale(@factor: 1.5) {
+		.transform(scale(@factor));
+	}
+	
+	.rotate(@deg: 45deg) {
+		.transform(rotate(@deg));
+	}
+	
+	.skew(@deg: 30deg; @deg2: 20deg) {
+		.transform(skew(@deg, @deg));
+	}
+	
+	.translate(@x: 0, @y: 0) {
+		.transform(translate(@x, @y));
+	}
+	
+	.translate3d(@x: 0, @y: 0, @z: 0) {
+		.transform(translate3d(@x, @y, @z));
+	}
+	
+	.perspective(@value: 1000) {
+		-webkit-perspective:	@value;
+		-moz-perspective: 		@value;
+		-ms-perspective: 		@value;
+		perspective: 			@value;
+	}
+	
+	.transform-origin(@x: center, @y: center) {
+		-webkit-transform-origin: @x @y;
+		-moz-transform-origin:    @x @y;
+		-ms-transform-origin:     @x @y;
+		-o-transform-origin:      @x @y;
+		transform-origin:		  @x @y;
+	}
+	
+	.selection(@bgcolor: #000, @color: #fff) {
+		&::selection {
+			background: @bgcolor; /* WebKit/Blink Browsers */
+			color: @color;
+		}
+		
+		&::-moz-selection {
+			background: #ffb7b7; /* Gecko Browsers */
+		  	color: @color;
+		}
+	}
+
+	.blur(@value: 5px){
+		filter: blur(@value); /* Someday, sigh ... */ 
+		-webkit-filter: blur(@value); /* Prefixed CSS3 blur filters */
+		-moz-filter: blur(@value); 
+		-o-filter: blur(@value); 
+		-ms-filter: blur(@value); 
+		//filter: url(#blur); /* Firefox needs SVG */
+		//filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='blur'><feGaussianBlur in='SourceGraphic' stdDeviation='5' /></filter></svg>#blur");
+		filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='5'); /* IE lte 9 */	
+	}
+
+	.fluid-type(@min-size: 14px, @max-size: 36px, @min-vw: @breakpoint-small, @max-vw: @breakpoint-large, @property: font-size) {
+		
+		@{property}: @min-size;
+			  
+		@media screen and (min-width: @min-vw) {
+		  @{property}: calc( @min-size ~" + " unit(@max-size - @min-size) ~" * ((100vw - " @min-vw ~") /" unit(@max-vw - @min-vw) ~")" );
+		}
+	  
+		@media screen and (min-width: @max-vw) {
+		  @{property}: @max-size;
+		}
+		  
+	}
+			
+}
+
+/* Media 
+ ========================================================================== */
+/*
+ * Vars
+	@breakpoint-mini-max:		(@breakpoint-small - 1);
+	@breakpoint-small:			480px;
+	@breakpoint-small-max:		(@breakpoint-medium - 1);
+	@breakpoint-medium:			768px;
+	@breakpoint-medium-max:		(@breakpoint-large - 1);
+	@breakpoint-large:			960px;
+	@breakpoint-large-max:		(@breakpoint-xlarge - 1);
+	@breakpoint-xlarge:			1220px;
+ */
+
+@breakpoint-mini-max: (@breakpoint-small - 1);
+
+/* Phone landscape and bigger */
+.media-small-and-bigger(@rules) {
+	@media (min-width: @breakpoint-small) { @rules(); }
+}
+
+/* Tablet and bigger */
+.media-medium-and-bigger(@rules) {
+	@media (min-width: @breakpoint-medium) { @rules(); }
+}
+
+/* Desktop and bigger */
+.media-large-and-bigger(@rules) {
+	@media (min-width: @breakpoint-large) { @rules(); }
+}
+
+/* Only large screens */
+.media-xlarge-and-bigger(@rules) {
+	@media (min-width: @breakpoint-xlarge) { @rules(); }
+}
+
+/* Tablets portrait */
+.media-only-medium(@rules) {
+	@media (min-width: @breakpoint-medium) and (max-width: @breakpoint-medium-max) { @rules(); }
+}
+
+.media-only-small(@rules) {
+	@media (min-width: @breakpoint-small) and (max-width: @breakpoint-small-max) { @rules(); }
+}
+
+.media-only-large(@rules) {
+	@media (min-width: @breakpoint-large) and (max-width: @breakpoint-large-max) { @rules(); }
+}
+
+/* Phones portrait and smaller */
+.media-small-smaller(@rules) {
+	@media (max-width: @breakpoint-mini-max) { @rules(); }
+}
+
+/* Phone landscape and smaller */
+.media-medium-smaller(@rules) {
+	@media (max-width: @breakpoint-small-max) { @rules(); }
+}
+
+/* Tablet portrait and smaller */
+.media-large-smaller(@rules) {
+	@media (max-width: @breakpoint-medium-max) { @rules(); }
+}
+
+.media-xlarge-smaller(@rules) {
+	@media (max-width: @breakpoint-large-max) { @rules(); }
+}

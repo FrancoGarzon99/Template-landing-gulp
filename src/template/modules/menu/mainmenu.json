@@ -1,0 +1,21 @@
+{
+    "title": "Menú Principal",
+	"items": [
+		{
+			"title": "Home",
+			"url": "#block-home"
+		},
+		{
+			"title": "Nosotros",
+			"url": "#block-top-a"
+		},
+		{
+			"title": "Portfolio",
+			"url": "#block-top-b"
+		},
+		{
+			"title": "Contacto",
+			"url": "#block-contact"
+		}
+	]
+}

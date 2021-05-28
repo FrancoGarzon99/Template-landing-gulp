@@ -1,0 +1,185 @@
+{% import "macro/load_module.twig" as module %}
+<!DOCTYPE HTML>
+<html lang="es-es" dir="ltr">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ theme.description }}">
+<meta name="keywords" content="{{ theme.keywords }}">
+<title>{{ theme.title }}</title>
+<link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<link rel="apple-touch-icon-precomposed" href="images/apple_touch_icon.png">
+
+<link rel="stylesheet" href="css/theme.min.css">
+
+</head>
+
+<body id="block-home">
+
+    <!-- Header -->
+    <div class="tm-block-header" uk-sticky="show-on-up: true; top:-175; animation: uk-animation-slide-top">
+
+        <div class="uk-navbar-container">
+            <div class="uk-container uk-container-expand">
+                
+                <nav class="uk-navbar uk-flex-between" uk-navbar>
+        
+                    <!-- Logo and toggle -->
+                    <div class="uk-navbar-left">
+                        <a class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon uk-toggle href="#offcanvas-main"></a>
+                        <a class="uk-navbar-item uk-logo uk-visible@m" href="#block-home" uk-scroll>
+                            <img class="uk-responsive-height" src="images/logo.png" alt="{{ theme.title }}">
+                        </a>
+                    </div>
+                    
+                    <!-- Logo small -->
+                    <div class="uk-navbar-center uk-hidden@m">
+                        <a class="uk-navbar-item uk-logo" href="#block-home" uk-scroll>
+                            <img class="uk-responsive-height" src="images/logo-small.png" alt="{{ theme.title }}">
+                        </a>
+                    </div>
+                    
+                    <!-- Menu -->
+                    <div class="tm-navbar-right uk-visible@m">
+                        {{ module.render('menu') }}
+                    </div>
+        
+                </nav>
+
+            </div>
+        </div>
+        
+
+    </div>
+    
+    <!-- Fullscreen A -->
+    <div id="block-fullscreen-a" class="tm-block-fullscreen-a">
+        <section class="tm-fullscreen-a">
+            {{ module.render('slider') }}
+        </section>
+    </div>
+    
+    <!-- Top A -->
+    <div id="block-top-a" class="uk-section tm-block-top-a">
+        <div class="uk-container">
+            <div class="tm-section-wrapper">
+                <section class="tm-top-a" uk-grid>
+                	<div class="uk-width-1-1">
+                        {{ module.render('nosotros') }}
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Image -->
+    <div id="block-top-image" class="tm-block-top-image">
+    
+        <div class="uk-cover-container">
+            <canvas class="uk-invisible" width="1200" height="350"></canvas>
+            <img src="images/example/bg2.png" alt="" uk-cover>
+        </div>
+    
+        <div class="uk-background-cover uk-background-center-center" uk-parallax="bgy: -200; viewport: 1;" style="background-image: url('images/example/bg.png');">
+            <canvas class="uk-invisible" width="1200" height="800"></canvas>
+        </div>
+    </div>
+
+    <!-- Top B -->
+    <div id="block-top-b" class="uk-section tm-block-top-b">
+        <div class="uk-container">
+            <div class="tm-section-wrapper">
+                <section class="tm-top-b" uk-grid>
+                    <div class="uk-width-1-1">
+                        {{ module.render('portfolio') }}
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contacto -->
+    <div id="block-contact" class="uk-section tm-block-contact">
+        <div class="uk-container">
+            <div class="tm-section-wrapper">
+                <section class="tm-contact" uk-grid>
+                    <div class="uk-width-1-1">
+                        {{ module.render('contacto') }}
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+            
+    <!-- Footer Top -->
+    <div id="block-footer-top" class="uk-section tm-block-footer-top">
+        <div class="uk-container">
+            <div class="tm-section-wrapper">
+                <footer class="tm-footer-top uk-flex-middle uk-flex-between" uk-grid>
+                    <div>
+                        <img src="images/logo-footer.png" alt="{{ theme.title }}">
+                    </div>
+                    
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="block-footer" class="uk-section tm-block-footer">
+        <div class="uk-container">
+            <div class="tm-section-wrapper">
+                <footer class="tm-footer uk-flex-middle uk-flex-center" uk-grid>
+                    <div>
+                        <div class="uk-panel mod-legal">© {{ theme.date }}. {{ theme.title }} - Todos los derechos reservados.</div>
+                    </div>
+                    <div>
+                        <div class="uk-panel mod-siniestro">
+                            <img src="images/icons/siniestro.svg" alt="Siniestro" uk-svg>
+                            <a href="http://www.siniestro.net" target="_blank">www.siniestro.net</a> - Diseño y comunicación digital
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offcanvas Main -->
+    <div class="uk-offcanvas-content">
+                
+        <div id="offcanvas-main" uk-offcanvas="overlay: true; selClose: .uk-offcanvas-close, .tm-offcanvas-close">
+            <div class="uk-offcanvas-bar">
+    
+                <button class="tm-offcanvas-close" type="button" uk-close></button>
+
+                <div class="uk-panel uk-margin-top">
+                    {{ module.render('menu', {layout: 'movil.html'}) }}
+                </div>
+
+            </div>
+        </div>
+    
+    </div>
+
+
+    <!-- build:js js/theme.min.js -->
+
+    <script src="vendor/assets/uikit/dist/js/uikit.js"></script>
+    <script src="vendor/assets/uikit/dist/js/uikit-icons.js"></script>
+    <script src="vendor/assets/jquery.js"></script>
+    <script src="vendor/assets/jquery.validate/jquery.validate.js"></script>
+    <script src="js/contact.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- ReCaptcha
+        <script src='https://www.google.com/recaptcha/api.js?render=6LfYiX4UAAAAAJv4sEvlnM71yDoH64AaAWy2qu-l'></script>
+    -->
+
+</body>
+</html>

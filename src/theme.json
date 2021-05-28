@@ -1,0 +1,15 @@
+{
+    "name": "landing",
+    "version": "1.0.0",
+    "date": "2018",
+    "type": "theme",
+    "title": "UIkit 3 Landing Theme",
+    "description": "Uikit 3 landing theme by siniestro",
+    "keywords": "",
+    "license": "MIT",
+    "author": {
+        "name": "Siniestro",
+        "email": "phavlo21@gmail.com",
+        "homepage": "http://siniestro.net"
+    }
+}

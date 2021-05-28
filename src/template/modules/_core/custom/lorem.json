@@ -1,0 +1,6 @@
+{
+    "title": "My Custom HTML",
+    "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
+	"class": "tm-custom",
+    "show_title": 1
+}

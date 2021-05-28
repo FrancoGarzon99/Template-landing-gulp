@@ -1,0 +1,17 @@
+{% macro render( module, opt ) %}
+	
+	{% if opt and is_string(opt) == true %}
+		{% set options = loadjson(opt) %}
+	{% else %}
+		{% set options = opt %}
+	{% endif %}
+			
+	{% set layout 		= options.layout|default('default.html') %}
+	{% set class 		= options.class|default('') %}
+	{% set title 		= options.title|default('') %}
+	{% set show_title 	= options.show_title|default(1) %}
+	{% set content 		= options.content|default('') %}
+	
+	{% include "../modules/"~module~"/tmpl/"~layout %}
+	
+{% endmacro %}

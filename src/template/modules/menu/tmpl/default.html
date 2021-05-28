@@ -1,0 +1,10 @@
+{% set menu = loadjson('./src/template/modules/menu/mainmenu.json') %}
+<ul class="uk-navbar-nav" uk-scrollspy-nav="closest: li; scroll: true, offset: 0">
+    {% for item in menu.items %}
+    <li class="item{{ loop.index }}">
+        <a href="{{ item.url }}">
+            {{ item.title }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>

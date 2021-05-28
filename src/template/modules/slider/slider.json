@@ -1,0 +1,29 @@
+{
+    "title": "Slider",
+	"animation": "push",
+	"autoplay": "true",
+	"width": "2000",
+	"height": "640",
+	"max_width": "1200",
+	"max_height": "640",
+	"items": [
+		{
+			"title": "Placa 2",
+			"image": "http://dummyimage.com/2000x640/cccccc/ffffff.png&text=1",
+			"overlay": "",
+			"link": "http://www.siniestro.net"
+		},
+		{
+			"title": "Placa 3",
+			"image": "http://dummyimage.com/2000x640/eeeeee/ffffff.png&text=2",
+			"overlay": "Placa 2",
+			"link": ""
+		},
+		{
+			"title": "Placa 4",
+			"image": "http://dummyimage.com/2000x640/aaaaaa/ffffff.png&text=3",
+			"overlay": "",
+			"link": ""
+		}
+	]
+}

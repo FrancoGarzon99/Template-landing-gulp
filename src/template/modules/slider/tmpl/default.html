@@ -1,0 +1,49 @@
+{% set slider = loadjson('./src/template/modules/slider/slider.json') %}
+
+<div class="uk-panel mod-slider">
+
+    <div uk-slideshow="autoplay: {{ slider.autoplay }}; animation: {{ slider.animation }}; ratio: {{ slider.width }}:{{ slider.height }}; min-height: 300; max-height: {{ slider.max_height }}">
+    
+        <div class="uk-position-relative uk-visible-toggle uk-light">
+    
+            <ul class="uk-slideshow-items">
+                {% for item in slider.items %}
+                    <li>
+                        {% if item.image %}
+                            <img src="{{ item.image }}" alt="" uk-cover>
+                        {% endif %}
+                                            
+                        {% if item.type == 'video' %}
+                            <video src="{{ item.video }}" autoplay loop muted playslinline uk-cover width="1280" height="720"></video>
+                        {% endif %}
+                        
+                        {% if item.overlay %}
+                            <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                                {{ item.overlay }}
+                            </div>
+                        {% endif %}
+                        
+                        {% if item.link %}
+                            <a class="uk-position-cover" href="{{ item.link }}" target="_blank"></a>
+                        {% endif %}
+
+                    </li>
+                {% endfor %}
+            </ul>
+    
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+    
+        </div>
+    
+        <ul class="uk-dotnav uk-flex-center uk-margin">
+            {% for item in slider.items %} {% set slideshow_item = loop.index - 1 %}
+                <li uk-slideshow-item="{{ slideshow_item }}">
+                    <a href="#"></a>
+                </li>
+            {% endfor %}
+        </ul>
+    
+    </div>
+
+</div>
